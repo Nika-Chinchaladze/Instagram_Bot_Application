@@ -3,14 +3,15 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+import os
 
 
 class InstagramBot:
     def __init__(self):
         self.my_service = Service("C:/Zoo_Development/chromedriver.exe")
         self.driver = webdriver.Chrome(service=self.my_service)
-        self.user_name = "tupac.shakur.1997"
-        self.password = "PeackyBlinders111"
+        self.user_name = os.environ.get("MY_USER_NAME")
+        self.password = os.environ.get("MY_PASSWORD")
         self.counter = 0
         self.quantity = 0
         self.my_number = 0
